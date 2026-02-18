@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sunaina Yadav — Marketing Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg-dark: #0F0F0F;
+    --bg-card: #1A1A1A;
+    --bg-card-hover: #222222;
+    --accent: #E8734A;
+    --accent-light: #F4A261;
+    --text-white: #FFFFFF;
+    --text-gray: #A0A0A0;
+    --text-light: #D0D0D0;
+    --border: #2A2A2A;
+  }
+
+  body {
+    font-family: 'DM Sans', 'Inter', sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-white);
+    line-height: 1.6;
+  }
+
+  /* Page sections */
+  .page {
+    min-height: 100vh;
+    padding: 80px 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .page-narrow {
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  /* ==================== PAGE 1: COVER ==================== */
+  .cover {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cover-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 4.5rem;
+    font-weight: 900;
+    letter-spacing: -2px;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, var(--text-white) 0%, var(--text-gray) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .cover-title {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--accent);
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .cover-tags {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 24px;
+  }
+
+  .cover-tag {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 8px 20px;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    letter-spacing: 0.5px;
+  }
+
+  .cover-meta {
+    margin-top: 48px;
+    font-size: 0.9rem;
+    color: var(--text-gray);
+  }
+
+  .cover-meta a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  /* ==================== PAGE 2: OPENER ==================== */
+  .opener-statement {
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 24px;
+    max-width: 800px;
+  }
+
+  .opener-statement span {
+    color: var(--accent);
+  }
+
+  .opener-sub {
+    font-size: 1.05rem;
+    color: var(--text-gray);
+    max-width: 700px;
+    margin-bottom: 56px;
+    line-height: 1.8;
+  }
+
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .stat-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px 24px;
+    text-align: center;
+    transition: border-color 0.3s;
+  }
+
+  .stat-box:hover {
+    border-color: var(--accent);
+  }
+
+  .stat-number {
+    font-family: 'Inter', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 900;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--text-gray);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+
+  /* ==================== SECTION HEADERS ==================== */
+  .section-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--accent);
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
+
+  .section-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 48px;
+    letter-spacing: -1px;
+  }
+
+  /* ==================== PAGE 3: SERVICES ==================== */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  .service-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 36px 28px;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+
+  .service-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+  }
+
+  .service-icon {
+    font-size: 2rem;
+    margin-bottom: 16px;
+  }
+
+  .service-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  .service-list {
+    list-style: none;
+  }
+
+  .service-list li {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    padding: 6px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .service-list li:last-child {
+    border-bottom: none;
+  }
+
+  .services-footer {
+    margin-top: 48px;
+    font-size: 1rem;
+    color: var(--text-gray);
+    font-style: italic;
+    text-align: center;
+  }
+
+  /* ==================== CASE STUDIES ==================== */
+  .case-meta {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+
+  .case-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .case-meta-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  .case-meta-value {
+    font-size: 1rem;
+    color: var(--text-light);
+    font-weight: 500;
+  }
+
+  .case-section-title {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-gray);
+    margin-bottom: 16px;
+    margin-top: 40px;
+    font-weight: 700;
+  }
+
+  .case-text {
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.8;
+    max-width: 750px;
+    margin-bottom: 16px;
+  }
+
+  .case-list {
+    list-style: none;
+    margin-bottom: 16px;
+  }
+
+  .case-list li {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    padding: 8px 0;
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .case-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 16px;
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 32px;
+  }
+
+  .result-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px 24px;
+    text-align: center;
+  }
+
+  .result-number {
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  .result-label {
+    font-size: 0.8rem;
+    color: var(--text-gray);
+    line-height: 1.5;
+  }
+
+  .results-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 16px;
+    max-width: 66%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ==================== PAGE 7: PAID ADS ==================== */
+  .paid-section {
+    margin-bottom: 56px;
+  }
+
+  .paid-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: var(--text-white);
+  }
+
+  .paid-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  .paid-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 16px;
+    text-align: center;
+  }
+
+  .paid-number {
+    font-family: 'Inter', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--accent);
+  }
+
+  .paid-label {
+    font-size: 0.75rem;
+    color: var(--text-gray);
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .comparison-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 24px;
+  }
+
+  .comparison-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px 20px;
+    text-align: center;
+  }
+
+  .comparison-card.highlight {
+    border-color: var(--accent);
+    background: linear-gradient(135deg, #1a1210 0%, #1A1A1A 100%);
+  }
+
+  /* ==================== PAGE 8: CONTENT SAMPLES ==================== */
+  .content-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .content-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+
+  .content-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .content-thumb {
+    width: 100%;
+    height: 200px;
+    background: var(--bg-card-hover);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    color: var(--text-gray);
+    border-bottom: 1px solid var(--border);
+    padding: 0;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .content-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  a.content-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .testimonial-photo {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 12px;
+    border: 2px solid var(--accent);
+  }
+
+  .paid-graph {
+    margin-top: 24px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  .paid-graph img {
+    width: 100%;
+    display: block;
+  }
+
+  .content-info {
+    padding: 20px;
+  }
+
+  .content-brand {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent);
+    margin-bottom: 6px;
+    font-weight: 700;
+  }
+
+  .content-type {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .content-desc {
+    font-size: 0.8rem;
+    color: var(--text-gray);
+  }
+
+  /* ==================== PAGE 9: PROCESS ==================== */
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    position: relative;
+  }
+
+  .process-step {
+    padding: 32px 24px;
+    text-align: center;
+    position: relative;
+  }
+
+  .process-step::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 60%;
+    background: var(--border);
+  }
+
+  .process-step:last-child::after {
+    display: none;
+  }
+
+  .process-number {
+    font-family: 'Inter', sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--accent);
+    opacity: 0.3;
+    margin-bottom: 12px;
+  }
+
+  .process-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .process-desc {
+    font-size: 0.85rem;
+    color: var(--text-gray);
+    line-height: 1.7;
+  }
+
+  .process-footer {
+    text-align: center;
+    margin-top: 56px;
+    padding: 32px;
+    background: var(--bg-card);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+  }
+
+  .process-footer p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    font-style: italic;
+  }
+
+  /* ==================== PAGE 10: BRANDS ==================== */
+  .brands-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+
+  .brand-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 40px 24px;
+    text-align: center;
+    transition: border-color 0.3s;
+  }
+
+  .brand-card:hover {
+    border-color: var(--accent);
+  }
+
+  .brand-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .brand-industry {
+    font-size: 0.8rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+
+  .brand-role {
+    font-size: 0.85rem;
+    color: var(--text-gray);
+  }
+
+  .industries-row {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .industry-tag {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 8px 20px;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    color: var(--text-light);
+  }
+
+  /* ==================== TESTIMONIALS ==================== */
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .testimonial-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 40px 32px;
+    position: relative;
+  }
+
+  .testimonial-quote {
+    font-size: 2.5rem;
+    color: var(--accent);
+    opacity: 0.4;
+    position: absolute;
+    top: 20px;
+    left: 28px;
+    font-family: Georgia, serif;
+  }
+
+  .testimonial-text {
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 24px;
+    margin-top: 16px;
+    font-style: italic;
+  }
+
+  .testimonial-author {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-white);
+  }
+
+  .testimonial-role {
+    font-size: 0.8rem;
+    color: var(--accent);
+    margin-top: 2px;
+  }
+
+  /* ==================== CREDENTIALS ==================== */
+  .cred-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .cred-section {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 36px 28px;
+  }
+
+  .cred-title {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent);
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+
+  .cred-item {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.95rem;
+    color: var(--text-light);
+  }
+
+  .cred-item:last-child {
+    border-bottom: none;
+  }
+
+  .cred-item strong {
+    color: var(--text-white);
+  }
+
+  .cred-item .sub {
+    font-size: 0.8rem;
+    color: var(--text-gray);
+    display: block;
+    margin-top: 2px;
+  }
+
+  /* ==================== CTA ==================== */
+  .cta-page {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cta-headline {
+    font-family: 'Inter', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 24px;
+    letter-spacing: -1px;
+  }
+
+  .cta-headline span {
+    color: var(--accent);
+  }
+
+  .cta-sub {
+    font-size: 1.1rem;
+    color: var(--text-gray);
+    max-width: 550px;
+    margin: 0 auto 48px;
+    line-height: 1.8;
+  }
+
+  .cta-contacts {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .cta-contact {
+    text-align: left;
+  }
+
+  .cta-contact-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent);
+    margin-bottom: 4px;
+    font-weight: 700;
+  }
+
+  .cta-contact-value {
+    font-size: 1rem;
+    color: var(--text-white);
+    font-weight: 500;
+  }
+
+  .cta-contact-value a {
+    color: var(--text-white);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 2px;
+  }
+
+  /* ==================== RESPONSIVE ==================== */
+  @media (max-width: 768px) {
+    .page { padding: 60px 6%; }
+    .cover-name { font-size: 2.8rem; }
+    .section-title { font-size: 2rem; }
+    .stats-row, .services-grid, .results-grid, .comparison-row,
+    .paid-grid, .content-grid, .process-grid, .brands-grid,
+    .testimonial-grid, .cred-grid { grid-template-columns: 1fr; }
+    .results-grid-2 { grid-template-columns: 1fr; max-width: 100%; }
+    .opener-statement { font-size: 1.4rem; }
+    .cta-headline { font-size: 2.4rem; }
+  }
+
+  @media print {
+    body {
+      background: #0F0F0F !important;
+      color: #FFFFFF !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
+    .page {
+      page-break-after: always;
+      min-height: auto;
+      padding: 40px 8%;
+      background: #0F0F0F !important;
+    }
+    .page:last-child { page-break-after: avoid; }
+    .stat-box, .service-card, .result-card, .paid-card, .comparison-card,
+    .content-card, .brand-card, .testimonial-card, .cred-section,
+    .process-footer, .content-thumb {
+      background: #1A1A1A !important;
+      border-color: #2A2A2A !important;
+    }
+    .comparison-card.highlight {
+      background: linear-gradient(135deg, #1a1210 0%, #1A1A1A 100%) !important;
+      border-color: #E8734A !important;
+    }
+    .stat-number, .result-number, .paid-number {
+      color: #E8734A !important;
+    }
+    .cover-name {
+      -webkit-text-fill-color: #FFFFFF !important;
+    }
+    .cover-tag, .industry-tag {
+      background: #1A1A1A !important;
+      border-color: #2A2A2A !important;
+      color: #D0D0D0 !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ==================== PAGE 1: COVER ==================== -->
+<section class="page cover">
+  <div>
+    <div class="cover-title">Marketing Strategist</div>
+    <h1 class="cover-name">SUNAINA YADAV</h1>
+    <div class="cover-tags">
+      <span class="cover-tag">Social Media</span>
+      <span class="cover-tag">Paid Ads</span>
+      <span class="cover-tag">Branding & Strategy</span>
+      <span class="cover-tag">Content</span>
+    </div>
+    <div class="cover-tags" style="margin-top: 12px;">
+      <span class="cover-tag">5+ Years Experience</span>
+      <span class="cover-tag">HealthTech</span>
+      <span class="cover-tag">E-Commerce</span>
+      <span class="cover-tag">Wealth Management</span>
+    </div>
+    <div class="cover-meta">
+      <a href="https://www.linkedin.com/in/sunainayadav/" target="_blank">linkedin.com/in/sunainayadav</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PAGE 2: OPENER ==================== -->
+<section class="page">
+  <div class="page-narrow">
+    <div class="section-label">About</div>
+    <p class="opener-statement">
+      I've built brands from zero, run campaigns that drove <span>&#8377;80 Cr+</span> in investments, and cut acquisition costs <span>40% below</span> industry benchmarks.
+    </p>
+    <p class="opener-sub">
+      5+ years across HealthTech, E-Commerce, Wealth Management, and Insurance.
+      MBA from NMIMS. Award-winning marketer (Emerging Performer — LivLong by IIFL).
+      <br><br>
+      I don't just post content. I build systems that turn attention into revenue.
+    </p>
+    <div class="stats-row">
+      <div class="stat-box">
+        <div class="stat-number">3.1M+</div>
+        <div class="stat-label">Reach Generated</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">&#8377;80Cr+</div>
+        <div class="stat-label">Revenue Influenced</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">40%</div>
+        <div class="stat-label">Lower CAC vs Industry</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">4</div>
+        <div class="stat-label">Industries Served</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PAGE 3: SERVICES ==================== -->
+<section class="page">
+  <div class="page-narrow">
+    <div class="section-label">Services</div>
+    <h2 class="section-title">What I Do</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">&#9672;</div>
+        <div class="service-name">Social Media & Content</div>
+        <ul class="service-list">
+          <li>Social media strategy & content calendars</li>
+          <li>Platform-specific content (Instagram, LinkedIn, Twitter)</li>
+          <li>Reels, carousels, blogs, stories, scripts</li>
+          <li>Influencer collaborations & ORM</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#9650;</div>
+        <div class="service-name">Paid Acquisition</div>
+        <ul class="service-list">
+          <li>Meta Ads (App Installs, Traffic, Conversions)</li>
+          <li>Google Ads (Search, Display, App)</li>
+          <li>Full-funnel campaign design & optimization</li>
+          <li>Retention: WhatsApp, SMS, Push, Email</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#9733;</div>
+        <div class="service-name">Branding & Strategy</div>
+        <ul class="service-list">
+          <li>Brand positioning & personality development</li>
+          <li>Go-to-market strategy & launch planning</li>
+          <li>Website content & UX strategy</li>
+          <li>Internal & external communications</li>
+        </ul>
+      </div>
+    </div>
+    <div class="services-footer">
+      I work across the full funnel — from first impression to final conversion.
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PAGE 4: CASE STUDY — PINC ==================== -->
+<section class="page">
+  <div class="page-narrow">
+    <div class="section-label">Case Study 01</div>
+    <h2 class="section-title">Pioneer Investcorp</h2>
+    <div class="case-meta">
+      <div class="case-meta-item">
+        <span class="case-meta-label">Industry</span>
+        <span class="case-meta-value">Wealth Management & Insurance</span>
+      </div>
+      <div class="case-meta-item">
+        <span class="case-meta-label">Role</span>
+        <span class="case-meta-value">Marketing Manager</span>
+      </div>
+      <div class="case-meta-item">
+        <span class="case-meta-label">Duration</span>
+        <span class="case-meta-value">May 2023 — July 2025</span>
+      </div>
+    </div>
+
+    <div class="case-section-title">The Challenge</div>
+    <p class="case-text">Two established financial brands — PINC Wealth and PINC Insurance — needed a unified digital presence. Social media was minimal, websites needed a revamp, and there was no structured content or engagement strategy.</p>
+
+    <div class="case-section-title">What I Did</div>
+    <ul class="case-list">
+      <li>Owned end-to-end branding and content strategy across both brands</li>
+      <li>Redesigned and revamped company websites for better UX and alignment</li>
+      <li>Built social media presence from scratch across LinkedIn, Twitter, and Instagram</li>
+      <li>Designed email and WhatsApp engagement campaigns for client retention</li>
+      <li>Conceptualized campaigns that directly drove investment conversions</li>
+    </ul>
+
+    <div class="case-section-title">Results</div>
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-number">&#8377;80 Cr+</div>
+        <div class="result-label">Investments driven through Smallcase & PMS campaigns</div>
+      </div>
+      <div class="result-card">
+        <div class="result-number">287%</div>
+        <div class="result-label">LinkedIn follower growth</div>
+      </div>
+      <div class="result-card">
+        <div class="result-number">0 → 2,850+</div>
+        <div class="result-label">Twitter followers built organically</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PAGE 5: CASE STUDY — JOLLEE ==================== -->
+<section class="page">
+  <div class="page-narrow">
+    <div class="section-label">Case Study 02</div>
+    <h2 class="section-title">Jollee</h2>
+    <div class="case-meta">
+      <div class="case-meta-item">
+        <span class="case-meta-label">Industry</span>
+        <span class="case-meta-value">Kids E-Commerce</span>
+      </div>
+      <div class="case-meta-item">
+        <span class="case-meta-label">Role</span>
+        <span class="case-meta-value">Marketing Lead</span>
+      </div>
+      <div class="case-meta-item">
+        <span class="case-meta-label">Duration</span>
+        <span class="case-meta-value">Oct 2022 — May 2023</span>
+      </div>
+    </div>
+
+    <div class="case-section-title">The Challenge</div>
+    <p class="case-text">A brand new kids' e-commerce app launching from zero. Needed app installs, user acquisition, social media presence, and a content engine — all built from scratch with limited budget.</p>
+
+    <div class="case-section-title">What I Did</div>
+    <ul class="case-list">
+      <li>Led end-to-end marketing: social media, influencer collabs, Google & Meta Ads</li>
+      <li>Built and managed a team of 5</li>
+      <li>Designed full-funnel acquisition + retention campaigns (WhatsApp, SMS, Push Notifications)</li>
+      <li>Created the brand's entire social content strategy from zero</li>
+      <li>Worked directly with the founder on brand personality and GTM</li>
+    </ul>
+
+    <div class="case-section-title">Results</div>
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-number">&#8377;4.1</div>
+        <div class="result-label">Cost per install with 70% signup rate</div>
+      </div>
+      <div class="result-card">
+        <div class="result-number">23%</div>
+        <div class="result-label">Of total business from organic social</div>
+      </div>
+      <div class="result-card">
+        <div class="result-number">470%</div>
+        <div class="result-label">Engagement increase in 3 months</div>
+      </div>
+    </div>
+    <div class="results-grid-2">
+      <div class="result-card">
+        <div class="result-number">824K+</div>
+        <div class="result-label">Users reached</div>
+      </div>
+      <div class="result-card">
+        <div class="result-number">17%</div>
+        <div class="result-label">Lower CAC than industry average</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PAGE 6: CASE STUDY — LIVLONG ==================== -->
+<section class="page">
+  <div class="page-narrow">
+    <div class="section-label">Case Study 03</div>
+    <h2 class="section-title">LivLong by IIFL</h2>
+    <div class="case-meta">
+      <div class="case-meta-item">
+        <span class="case-meta-label">Industry</span>
+        <span class="case-meta-value">HealthTech</span>
+      </div>
+      <div class="case-meta-item">
+        <span class="case-meta-label">Role</span>
+        <span class="case-meta-value">Digital Marketing Manager</span>
+      </div>
+      <div class="case-meta-item">
+        <span class="case-meta-label">Duration</span>
+        <span class="case-meta-value">April 2021 — July 2022</span>
+      </div>
+      <div class="case-meta-item">
+        <span class="case-meta-label">Recognition</span>
+        <span class="case-meta-value" style="color: var(--accent);">Emerging Performer of the Year</span>
+      </div>
+    </div>
+
+    <div class="case-section-title">The Challenge</div>
+    <p class="case-text">A new HealthTech product by IIFL needed a complete digital marketing setup — social media, SEO content, lead generation, and a brand launch strategy. Everything had to be built independently from the ground up.</p>
+
+    <div class="case-section-title">What I Did</div>
+    <ul class="case-list">
+      <li>Independently managed all social media accounts and content calendars</li>
+      <li>Created SEO-optimized, platform-specific content for social and communities</li>
+      <li>Executed B2B lead-gen campaigns through Facebook & LinkedIn Ads</li>
+      <li>Led the full branding and go-to-market strategy including product launch</li>
+      <li>Optimized website, landing pages, and app UX for conversions</li>
+    </ul>
+
+    <div class="case-section-title">Results</div>
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-number">3.1M+</div>
+        <div class="result-label">Accounts reached</div>
+      </div>
+      <div class="result-card">
+        <div class="result-number">1,069%</div>
+        <div class="result-label">Increase in reach</div>
+      </div>
+      <div class="result-card">
+        <div class="result-number">321%</div>
+        <div class="result-label">Increase in engagement</div>
+      </div>
+    </div>
+    <div class="results-grid-2" style="max-width: 33%; margin-top: 16px;">
+      <div class="result-card">
+        <div class="result-number">82.6%</div>
+        <div class="result-label">Follower growth</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PAGE 7: PAID PERFORMANCE ==================== -->
+<section class="page">
+  <div class="page-narrow">
+    <div class="section-label">Performance Marketing</div>
+    <h2 class="section-title">Paid Ads That Delivered</h2>
+
+    <div class="paid-section">
+      <div class="paid-title">App Install Campaigns — Jollee</div>
+      <div class="paid-grid">
+        <div class="paid-card">
+          <div class="paid-number">&#8377;4.1</div>
+          <div class="paid-label">Cost per Install</div>
+        </div>
+        <div class="paid-card">
+          <div class="paid-number">70%</div>
+          <div class="paid-label">Sign-up Rate</div>
+        </div>
+        <div class="paid-card">
+          <div class="paid-number">30%</div>
+          <div class="paid-label">Conversion Rate</div>
+        </div>
+        <div class="paid-card">
+          <div class="paid-number">40</div>
+          <div class="paid-label">Days to Scale</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="paid-section">
+      <div class="paid-title">Meta Conversion Campaigns</div>
+      <div class="comparison-row">
+        <div class="comparison-card">
+          <div class="paid-number" style="color: var(--text-gray);">&#8377;1,500</div>
+          <div class="paid-label">Industry CAC</div>
+        </div>
+        <div class="comparison-card highlight">
+          <div class="paid-number">&#8377;900</div>
+          <div class="paid-label">My CAC (40% Lower)</div>
+        </div>
+        <div class="comparison-card">
+          <div class="paid-number">4x</div>
+          <div class="paid-label">Month-on-Month Growth</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PAGE 8: CONTENT SAMPLES ==================== -->
+<section class="page">
+  <div class="page-narrow">
+    <div class="section-label">Content</div>
+    <h2 class="section-title">Content That Performed</h2>
+    <div class="content-grid">
+      <div class="content-card">
+        <div class="content-thumb">
+          <img src="images/paneer-trend.png" alt="Paneer trend reel — LivLong">
+        </div>
+        <div class="content-info">
+          <div class="content-brand">LivLong</div>
+          <div class="content-type">Trend-Jacking Reel</div>
+          <div class="content-desc">Hinglish health content riding pop culture trends</div>
+        </div>
+      </div>
+      <div class="content-card">
+        <div class="content-thumb">
+          <img src="images/mental-health-carousel.png" alt="Mental Health Day carousel — PINC Insurance">
+        </div>
+        <div class="content-info">
+          <div class="content-brand">PINC Insurance</div>
+          <div class="content-type">Research-Based Carousel</div>
+          <div class="content-desc">Data-driven educational content for awareness</div>
+        </div>
+      </div>
+      <a href="https://www.instagram.com/reels/DJwq0VwzjbO/" target="_blank" class="content-card content-link">
+        <div class="content-thumb">
+          <img src="images/wedding-reel-tbm.png" alt="Wedding reel — TrueBridesmaid">
+        </div>
+        <div class="content-info">
+          <div class="content-brand">TrueBridesmaid</div>
+          <div class="content-type">Engagement Reel</div>
+          <div class="content-desc">Relatable wedding content — 849 likes</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="content-grid" style="margin-top: 24px;">
+      <div class="content-card">
+        <div class="content-thumb">
+          <img src="images/stress-eating-reel.png" alt="Stress Eating reel">
+        </div>
+        <div class="content-info">
+          <div class="content-brand">LivLong</div>
+          <div class="content-type">Educational Reel</div>
+          <div class="content-desc">Health awareness content on stress eating</div>
+        </div>
+      </div>
+      <div class="content-card">
+        <div class="content-thumb">
+          <img src="images/morocco-earthquake.png" alt="Morocco Earthquake post">
+        </div>
+        <div class="content-info">
+          <div class="content-brand">PINC Insurance</div>
+          <div class="content-type">Topical Content</div>
+          <div class="content-desc">Timely awareness content tied to current events</div>
+        </div>
+      </div>
+      <div class="content-card">
+        <div class="content-thumb">
+          <img src="images/mental-health.png" alt="Mental Health post">
+        </div>
+        <div class="content-info">
+          <div class="content-brand">PINC Insurance</div>
+          <div class="content-type">Awareness Post</div>
+          <div class="content-desc">Mental health awareness campaign content</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-grid" style="margin-top: 24px;">
+      <div class="content-card">
+        <div class="content-thumb">
+          <img src="images/truebridesmaid-reel.png" alt="TrueBridesmaid reel">
+        </div>
+        <div class="content-info">
+          <div class="content-brand">TrueBridesmaid</div>
+          <div class="content-type">Relatable Reel</div>
+          <div class="content-desc">Engagement-driven wedding content</div>
+        </div>
+      </div>
+      <div class="content-card">
+        <div class="content-thumb">
+          <img src="images/wedding-reel.png" alt="Wedding reel">
+        </div>
+        <div class="content-info">
+          <div class="content-brand">TrueBridesmaid</div>
+          <div class="content-type">Wedding Reel</div>
+          <div class="content-desc">Viral wedding content format</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="margin-top: 48px; margin-bottom: 24px; font-size: 1.1rem; font-weight: 700;">Blog Writing</h3>
+    <div class="content-grid">
+      <a href="https://www.linkedin.com/pulse/ai-clinical-trials-disrupting-pharma-industrys-future-pincinsurance/" target="_blank" class="content-card content-link">
+        <div class="content-thumb">
+          <img src="images/ai-clinical-trials.png" alt="AI & Clinical Trials blog">
+        </div>
+        <div class="content-info">
+          <div class="content-brand">PINC Insurance</div>
+          <div class="content-type">AI & Clinical Trials: Disrupting Pharma's Future</div>
+          <div class="content-desc">Ghost-written for VP — Pharma & Lifesciences</div>
+        </div>
+      </a>
+      <a href="https://www.linkedin.com/pulse/unlocking-mystery-cooking-oils-pincinsurance-sa1of/" target="_blank" class="content-card content-link">
+        <div class="content-thumb">
+          <img src="images/cooking-oils.png" alt="Mystery of Cooking Oils blog">
+        </div>
+        <div class="content-info">
+          <div class="content-brand">PINC Insurance</div>
+          <div class="content-type">Unlocking the Mystery of Cooking Oils</div>
+          <div class="content-desc">SEO-optimized wellness blog</div>
+        </div>
+      </a>
+      <a href="https://www.linkedin.com/pulse/intuitive-eating-101-what-how-start-pincinsurance-hwtlf/" target="_blank" class="content-card content-link">
+        <div class="content-thumb">
+          <img src="images/intuitive-eating.jpeg" alt="Mindful Eating blog">
+        </div>
+        <div class="content-info">
+          <div class="content-brand">PINC Insurance</div>
+          <div class="content-type">Intuitive Eating 101 — What It Is & How to Start</div>
+          <div class="content-desc">Wellness content for audience engagement</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="services-footer" style="margin-top: 40px;">
+      From snappy push notifications to 2,000-word SEO blogs — I write across every format and funnel stage.
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PAGE 9: PROCESS ==================== -->
+<section class="page">
+  <div class="page-narrow">
+    <div class="section-label">Approach</div>
+    <h2 class="section-title">How I Work</h2>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="process-number">01</div>
+        <div class="process-name">Audit</div>
+        <div class="process-desc">Deep-dive into your brand, audience, competitors, and current channels</div>
+      </div>
+      <div class="process-step">
+        <div class="process-number">02</div>
+        <div class="process-name">Strategize</div>
+        <div class="process-desc">Content buckets, social calendar, campaign planning, channel strategy</div>
+      </div>
+      <div class="process-step">
+        <div class="process-number">03</div>
+        <div class="process-name">Execute</div>
+        <div class="process-desc">Content creation, posting, campaign management, influencer coordination, ORM</div>
+      </div>
+      <div class="process-step">
+        <div class="process-number">04</div>
+        <div class="process-name">Measure</div>
+        <div class="process-desc">Weekly and monthly analytics, optimization, reporting with clear next steps</div>
+      </div>
+    </div>
+    <div class="process-footer">
+      <p>I work directly with founders. No fluff, no 47-slide decks.<br>You get strategy + execution from the same person.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PAGE 10: BRANDS ==================== -->
+<section class="page">
+  <div class="page-narrow">
+    <div class="section-label">Experience</div>
+    <h2 class="section-title">Brands I've Worked With</h2>
+    <div class="brands-grid">
+      <div class="brand-card">
+        <div class="brand-name">PINC Wealth</div>
+        <div class="brand-industry">Wealth Management</div>
+        <div class="brand-role">Marketing Manager</div>
+      </div>
+      <div class="brand-card">
+        <div class="brand-name">PINC Insurance</div>
+        <div class="brand-industry">Insurance</div>
+        <div class="brand-role">Marketing Manager</div>
+      </div>
+      <div class="brand-card">
+        <div class="brand-name">Jollee</div>
+        <div class="brand-industry">Kids E-Commerce</div>
+        <div class="brand-role">Marketing Lead</div>
+      </div>
+      <div class="brand-card">
+        <div class="brand-name">LivLong by IIFL</div>
+        <div class="brand-industry">HealthTech</div>
+        <div class="brand-role">Digital Marketing Manager</div>
+      </div>
+      <div class="brand-card">
+        <div class="brand-name">Urban Company</div>
+        <div class="brand-industry">Home Services</div>
+        <div class="brand-role">Business Development Intern</div>
+      </div>
+      <div class="brand-card">
+        <div class="brand-name">CoHo</div>
+        <div class="brand-industry">Co-Living</div>
+        <div class="brand-role">Marketing & Sales Intern</div>
+      </div>
+    </div>
+    <div class="industries-row">
+      <span class="industry-tag">Wealth Management</span>
+      <span class="industry-tag">Insurance</span>
+      <span class="industry-tag">HealthTech</span>
+      <span class="industry-tag">Kids E-Commerce</span>
+      <span class="industry-tag">Home Services</span>
+      <span class="industry-tag">Co-Living</span>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PAGE 11: TESTIMONIALS ==================== -->
+<section class="page">
+  <div class="page-narrow">
+    <div class="section-label">Testimonials</div>
+    <h2 class="section-title">What Founders Say</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"</div>
+        <div class="testimonial-text">
+          Sunaina has a keen eye on content. With her in the team, our Instagram positioning got elevated very quickly. She is observant, understands customer behaviour and is able to translate it very well in the form of content.
+        </div>
+        <img src="images/akriti.png" alt="Akriti Gupta" class="testimonial-photo">
+        <div class="testimonial-author">Akriti Gupta</div>
+        <div class="testimonial-role">Founder, Jollee — Kids E-Commerce Platform</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"</div>
+        <div class="testimonial-text">
+          Sunaina's dedication and hard work are truly admirable. Her commitment to delivering high-quality work consistently, coupled with dedication to meeting deadlines, is truly remarkable. Thank you for your exceptional work ethic and the invaluable contributions.
+        </div>
+        <img src="images/gaurav.png" alt="Gaurav Dubey" class="testimonial-photo">
+        <div class="testimonial-author">Gaurav Dubey</div>
+        <div class="testimonial-role">CEO, LivLong by IIFL — HealthTech</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PAGE 12: CREDENTIALS ==================== -->
+<section class="page">
+  <div class="page-narrow">
+    <div class="section-label">Background</div>
+    <h2 class="section-title">Credentials</h2>
+    <div class="cred-grid">
+      <div class="cred-section">
+        <div class="cred-title">Education</div>
+        <div class="cred-item">
+          <strong>MBA</strong>
+          <span class="sub">Narsee Monjee Institute of Management Studies (NMIMS) — 3.4/4 GPA</span>
+        </div>
+        <div class="cred-item">
+          <strong>B.A.</strong>
+          <span class="sub">Bharati Vidyapeeth Deemed University — First Class</span>
+        </div>
+      </div>
+      <div class="cred-section">
+        <div class="cred-title">Certifications</div>
+        <div class="cred-item">Lean Six Sigma Green Belt — KPMG</div>
+        <div class="cred-item">Google Analytics — Google</div>
+        <div class="cred-item">Digital Unlock — Google</div>
+        <div class="cred-item">Facebook & Instagram Marketing — Sorted Digital</div>
+      </div>
+      <div class="cred-section">
+        <div class="cred-title">Recognition</div>
+        <div class="cred-item" style="border-bottom: none;">
+          <strong style="color: var(--accent);">Emerging Performer of the Year</strong>
+          <span class="sub">LivLong by IIFL</span>
+        </div>
+      </div>
+      <div class="cred-section">
+        <div class="cred-title">Leadership</div>
+        <div class="cred-item">Managed teams of 5-8 across sales and marketing</div>
+        <div class="cred-item">Worked directly with founders and C-suite on GTM</div>
+        <div class="cred-item" style="border-bottom: none;">President — Samarthan (Social Responsibility Committee)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PAGE 13: CTA ==================== -->
+<section class="page cta-page">
+  <div>
+    <h2 class="cta-headline">Let's <span>Talk.</span></h2>
+    <p class="cta-sub">
+      I'm looking for my next full-time role where I can own marketing end-to-end — from strategy to execution.
+      <br><br>
+      If you're building something and need a marketer who thinks like a founder, let's have a conversation.
+    </p>
+    <div class="cta-contacts">
+      <div class="cta-contact">
+        <div class="cta-contact-label">Email</div>
+        <div class="cta-contact-value"><a href="mailto:sunaina.yadav272@gmail.com">sunaina.yadav272@gmail.com</a></div>
+      </div>
+      <div class="cta-contact">
+        <div class="cta-contact-label">Phone</div>
+        <div class="cta-contact-value">7838584209</div>
+      </div>
+      <div class="cta-contact">
+        <div class="cta-contact-label">LinkedIn</div>
+        <div class="cta-contact-value"><a href="https://www.linkedin.com/in/sunainayadav/" target="_blank">linkedin.com/in/sunainayadav</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
